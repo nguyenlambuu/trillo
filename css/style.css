@@ -124,8 +124,6 @@ body {
   .user-nav > *:hover {
     background-color: var(--color-grey-light-2); }
   .user-nav__icon-box {
-    display: flex;
-    align-items: center;
     position: relative; }
   .user-nav__icon {
     height: 2.25rem;
