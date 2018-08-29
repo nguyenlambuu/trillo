@@ -44,6 +44,8 @@
 }
 
 .detail {
+    font-size: 1.4rem;
+
     display: flex;
 
     padding: 4.5rem;
@@ -52,7 +54,6 @@
 }
 
 .description {
-    font-size: 1.4rem;
     background-color: #fff;
     box-shadow: var(--shadow--light);
     padding: 3rem;
@@ -62,7 +63,10 @@
 }
 
 .user-reviews {
-    background-color: #fff;
-
     flex: 1;
+
+    // For SHOW ALL button
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
