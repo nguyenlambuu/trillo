@@ -17,7 +17,13 @@
 
 	display: flex;
 	align-items: center;
-	justify-content: center;
+    justify-content: center;
+    
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+	}
 
 	&__input {
 		font-family: inherit;
@@ -34,7 +40,11 @@
 		&:focus {
 			width: 100%;
 			outline: none;
-			background-color: var(--color-grey-light-3);
+            background-color: var(--color-grey-light-3);
+            
+            @media only screen and (max-width: $bp-smallest) {
+                background-color: var(--color-grey-light-2);
+            }
 		}
 
 		&::-webkit-input-placeholder {
@@ -128,13 +138,29 @@
 .side-nav {
 	font-size: 1.4rem;
 	list-style: none;
-	margin-top: 3.5rem;
+    margin-top: 3.5rem;
+    
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+        flex: 0 0 100%;
+        justify-content: center;
+    }
 
 	&__item {
 		position: relative;
 
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+            text-align: center;
+        }
+
 		&:not(:last-child) {
-			margin-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            
+            @media only screen and (max-width: $bp-medium) {
+                margin: 0;
+            }
 		}
 	}
 
@@ -173,14 +199,31 @@
 		z-index: 10; // z-index only works with position property
 
 		display: flex;
-		align-items: center;
+        align-items: center;
+        
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1rem .5rem;
+        }
 	}
 
 	&__icon {
 		width: 1.75rem;
 		height: 1.75rem;
 		margin-right: 2rem;
-		fill: currentColor; // basically is just the color of the current element or the parent element
+        fill: currentColor; // basically is just the color of the current element or the parent element
+        
+        @media only screen and (max-width: $bp-small) {
+            width: 1.5rem;
+		    height: 1.5rem;
+		    margin-right: 0;
+            margin-bottom: .7rem;
+        }
 	}
 }
 /*-------
@@ -191,7 +234,11 @@
 	font-size: 1.2rem;
 	color: var(--color-grey-light-4);
 	text-align: center;
-	padding: 2.5rem;
+    padding: 2.5rem;
+    
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 /*-------
@@ -223,6 +270,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
 	}
 
 	&__stars {
@@ -259,14 +311,27 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
+
 		&-averange {
             font-size: 2.25rem;
             font-weight: 300;
             margin-bottom: -3px;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: .8rem;
+            }
 		}
 		&-count {
             font-size: .8rem;
             text-transform: uppercase;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: .5rem;
+            }
 		}
 	}
 }
@@ -385,7 +450,7 @@
         margin-right: auto;
     }
     &__friends {
-
+        display: flex;
     }
     &__photo {
         box-sizing: content-box; // images still size, not small
@@ -397,6 +462,9 @@
         &:not(:last-child) {
             margin-right: -1.5rem;
             
+            @media only screen and (max-width: $bp-large) {
+                margin-right: -2rem;
+            }
         }
     }
 }
@@ -413,6 +481,15 @@
     padding: 3rem;
     margin-bottom: 3.5rem;
     position: relative;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin: 0 0 3rem 0;
+    }
 
     &__text {
         margin-bottom: 2rem;
@@ -477,6 +554,11 @@
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now {
         font-size: 2rem;
